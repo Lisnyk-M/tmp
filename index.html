@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      .body {
+        counter-reset: v;
+      }
+
+      /* ===================gamburger===================== */
+      .quad{
+        position: relative;
+        width: 100px;
+        height: 100px;
+        /* background: #aaaaaa; */
+      }
+      .line{
+        width: 100px;
+        height: 20px;
+        background: #f33;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      .line::after{
+        content: '';
+        transform: translateY(40px);
+        /* transform-origin: calc(50% - 0px) calc(50% - 0px); */
+        width: 100px;
+        height: 20px;
+        background: #f33;
+        position: absolute;        
+      }
+      .line::before{
+        content: '';
+        transform: translateY(-40px);
+        width: 100px;
+        height: 20px;
+        background: #f33;
+        position: absolute;        
+      }      
+      .quad:hover .line::after{        
+        /* width: calc(100px * 1.4);         */
+        /* transform: translateX(-30px); */
+        transform: rotate(45deg);
+        content: '';
+        transition-property: transform;
+        transition-duration: 0.2s;
+        /* background: #000;         */
+      }
+      .quad:hover .line::before{        
+        /* width: calc(100px * 1.4);         */
+        /* transform: translateX(-30px); */
+        transform: rotate(-45deg);
+        content: '';
+        transition-property: transform;
+        transition-duration: 0.2s;        
+        /* background: #000;         */
+      }
+
+      .quad:hover .line{
+        background-color: #fff;
+        transition-property: background-color;
+        transition-duration: 0.2s;
+      }      
+    </style>
+  </head>
+  <body>
+    <!-- nav.menu>ul>(li>a)*6 -->
+    <div class="quad">
+      <div class="line"></div>
+    </div>
+
+ 
+
+  </body>
+</html>
